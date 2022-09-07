@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('userlogin', data.ok.toString());
         sessionStorage.setItem('username', data.username);
         sessionStorage.setItem('userrole', data.role);
+        sessionStorage.setItem('useremail', data.email);
 
         this.router.navigateByUrl("/profile");
       }
