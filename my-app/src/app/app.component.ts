@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  constructor(private router:Router, private httpClient: HttpClient) { }
+
+
+ngOnInit(): void {
+}
+clear() {
+  sessionStorage.clear();
+  this.router.navigateByUrl("/login");
+}
 }
