@@ -1,4 +1,4 @@
-<p>profile works!</p>
+
 ID: <br>
 <p> {{id}}</p>  <br>
 
@@ -9,4 +9,27 @@ Email: <br>
 <p> {{email}}</p> <br>
 Role: <br>
 <p> {{role}}</p> <br>
+
+ID: <br>
+<input type="number" [(ngModel)]="id">   <br>
+
+email by email:<br>
+<input type="email" [(ngModel)]="email"> <br>
+
+username: <br>
+<input type="text" [(ngModel)]="username"> <br>
+role: <br>
+<input type="text" [(ngModel)]="role">   <br>
+
+
+<button class="log_but" id="submit"(click)="editFunc()">Submit</button>
+<!-- <div>
+<container-element [ngSwitch]='"role"'>
+    <div ngSwitchCase="super">you are a super admin user</div>
+    <some-element ngSwitchCase="group">you are a group admin user</some-element>
+    <some-element ngSwitchCase="groupAssis">you are a group assistant user</some-element>
+    <some-element ngSwitchDefault>you are a regular user</some-element>
+</container-element>
+
+</div> -->
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { NgSwitch } from '@angular/common';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 };
@@ -35,6 +36,26 @@ export class ProfileComponent implements OnInit {
 
     }
   ngOnInit(): void {
+  }
+  editFunc(){
+    let userobj = {
+      'id': this.id,
+      'username': this.username, 
+      'email': this.email, 
+      'role': this.role
+    }
+
+    
+    sessionStorage.setItem('username', this.username);
+    sessionStorage.setItem('email', this.email);
+    sessionStorage.setItem('role', this.role);
+    sessionStorage.setItem('id', this.id.toString());
+
+    this.httpClient.post<Userobj[]>(BACKEND_URL + '/loginafter', userobj,  httpOptions)
+      .subscribe((m: any) => {alert(JSON.stringify(m));});
+
+
+
   }
 
 }
