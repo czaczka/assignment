@@ -22,3 +22,6 @@ const httpServer = http.Server(app);
 httpServer.listen(PORT, function() {
     console.log(`http Server listening on port: ${PORT}`);
 });
+
+app.post('/login', require('./router/postLogin'));
+app.post('/loginafter', require('./router/postLoginAfter'));
